@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.youtube.jwt.dao.HolidayDao;
 import com.youtube.jwt.entity.Holiday;
+import com.youtube.jwt.entity.InterviewSchedule;
 import com.youtube.jwt.entity.Proposal;
 
 @Service
@@ -23,7 +24,9 @@ public class HolidayService {
 		 Holiday holidayy = holidayDao.save(holiday);
          return holidayy;
 	}
-
+	public Optional<Holiday> getHolidayById(Long id) {
+	    return holidayDao.findById(id);
+	}
 	public Holiday updateHoliday(Long id, Holiday holiday) {
 		Optional<Holiday> existingHolidayOptional = holidayDao.findById(id);
 		if (existingHolidayOptional.isPresent()) {
