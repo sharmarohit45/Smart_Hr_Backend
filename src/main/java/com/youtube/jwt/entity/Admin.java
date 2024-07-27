@@ -15,7 +15,6 @@ public class Admin {
     private String mobileNo;
     private String gender;
     
-    // Additional fields from conflict resolution
     @Lob
     @Column(name = "file_data", columnDefinition = "BLOB")
     private byte[] fileData;
@@ -27,8 +26,7 @@ public class Admin {
     private String address;
     private String about;
     private String role;
-
-    // Getters and setters for all fields
+    private String anniversaryDate;
     public Long getAdminId() {
         return adminId;
     }
@@ -156,5 +154,14 @@ public class Admin {
     public void setRole(String role) {
         this.role = role;
     }
+
+	public String getAnniversaryDate() {
+		return anniversaryDate;
+	}
+
+	public void setAnniversaryDate(String anniversaryDate) {
+		this.anniversaryDate = anniversaryDate;
+	}
+    
 }
 
