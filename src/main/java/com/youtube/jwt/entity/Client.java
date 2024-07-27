@@ -1,8 +1,11 @@
 package com.youtube.jwt.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Client {
@@ -37,6 +40,18 @@ public class Client {
 	private String companyLogo;
 	private String role;
 	private String imageProfile;
+	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+	 @JsonIgnore
+	 private List<Project> projects;
+	 public List<Project> getProjects() {
+	        return projects;
+	    }
+
+	    public void setProjects(List<Project> projects) {
+	        this.projects = projects;
+	    }
+	    
+	    
 
 	@Lob
 	private byte[] imageProfileData;

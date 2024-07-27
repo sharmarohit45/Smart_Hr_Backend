@@ -61,12 +61,23 @@ public class Employee {
 	    public void setProjects(List<Project> projects) {
 	        this.projects = projects;
 	    }
-	 
-	  @Lob
-	  private byte[] imageData;
+	    
+	    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+		 @JsonIgnore
+		 private List<AdminLeave> adminLeave;
+	     @Lob
+	     private byte[] imageData;
 
 	public Long getEmpId() {
 		return empId;
+	}
+
+	public List<AdminLeave> getAdminLeave() {
+		return adminLeave;
+	}
+
+	public void setAdminLeave(List<AdminLeave> adminLeave) {
+		this.adminLeave = adminLeave;
 	}
 
 	public void setEmpId(Long empId) {

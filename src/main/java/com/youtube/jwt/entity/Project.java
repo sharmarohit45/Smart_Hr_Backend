@@ -30,7 +30,6 @@ public class Project {
 	            joinColumns = @JoinColumn(name = "project_id"),
 	            inverseJoinColumns = @JoinColumn(name = "employee_id")
 	    )
-	    @JsonBackReference
 	    private List<Employee> members;
 	    private String projectSummery;
 	    private String projectNotes;

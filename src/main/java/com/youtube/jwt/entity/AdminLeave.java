@@ -1,5 +1,6 @@
 package com.youtube.jwt.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ public class AdminLeave {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long leaveId;
 	private Long employeeIId;
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name = "employee_id", referencedColumnName = "empId")
 	private Employee employee;
 	private String leaveType;

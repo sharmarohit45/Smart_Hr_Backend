@@ -67,13 +67,13 @@ public class ClientController {
 		return client.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 	
-	 @PutMapping("/client/{clientId}")
+	@PutMapping("/client/{clientId}")
 	    public ResponseEntity<Client> updateClient(@PathVariable Long clientId, @RequestBody Client updatedClient) {
 	        Client savedClient = clientService.updateClient(clientId, updatedClient);
 	        return ResponseEntity.ok(savedClient);
 	    }
 
-	    @DeleteMapping("/client/{clientId}")
+	@DeleteMapping("/client/{clientId}")
 	    public ResponseEntity<String> deleteClient(@PathVariable Long clientId) {
 	        clientService.deleteClient(clientId);
 	        return ResponseEntity.ok("Client deleted successfully");
