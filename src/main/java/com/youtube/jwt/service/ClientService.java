@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -62,5 +64,113 @@ public class ClientService {
             //Logger.warning("Employee with ID " + empId + " not found.");
         }
         return client;
+    }
+    @Transactional
+    public Client updateClient(Long clientId, Client updatedClient) {
+        Client existingClient = clientDao.findById(clientId)
+                .orElseThrow(() -> new RuntimeException("Client not found"));
+
+        if (updatedClient.getSalutation() != null) {
+            existingClient.setSalutation(updatedClient.getSalutation());
+        }
+        if (updatedClient.getClientName() != null) {
+            existingClient.setClientName(updatedClient.getClientName());
+        }
+        if (updatedClient.getEmail() != null) {
+            existingClient.setEmail(updatedClient.getEmail());
+        }
+        if (updatedClient.getProfilePicture() != null) {
+            existingClient.setProfilePicture(updatedClient.getProfilePicture());
+        }
+        if (updatedClient.getPassword() != null) {
+            existingClient.setPassword(updatedClient.getPassword());
+        }
+        if (updatedClient.getCountry() != null) {
+            existingClient.setCountry(updatedClient.getCountry());
+        }
+        if (updatedClient.getMobileNo() != null) {
+            existingClient.setMobileNo(updatedClient.getMobileNo());
+        }
+        if (updatedClient.getGendar() != null) {
+            existingClient.setGendar(updatedClient.getGendar());
+        }
+        if (updatedClient.getChangeLanguage() != null) {
+            existingClient.setChangeLanguage(updatedClient.getChangeLanguage());
+        }
+        if (updatedClient.getClientCategory() != null) {
+            existingClient.setClientCategory(updatedClient.getClientCategory());
+        }
+        if (updatedClient.getClientSubCategory() != null) {
+            existingClient.setClientSubCategory(updatedClient.getClientSubCategory());
+        }
+        if (updatedClient.getLoginAllowed() != null) {
+            existingClient.setLoginAllowed(updatedClient.getLoginAllowed());
+        }
+        if (updatedClient.getEmailNotificationAllowed() != null) {
+            existingClient.setEmailNotificationAllowed(updatedClient.getEmailNotificationAllowed());
+        }
+        if (updatedClient.getCompanyName() != null) {
+            existingClient.setCompanyName(updatedClient.getCompanyName());
+        }
+        if (updatedClient.getOfficialWebsite() != null) {
+            existingClient.setOfficialWebsite(updatedClient.getOfficialWebsite());
+        }
+        if (updatedClient.getTaxName() != null) {
+            existingClient.setTaxName(updatedClient.getTaxName());
+        }
+        if (updatedClient.getGstVatNumber() != null) {
+            existingClient.setGstVatNumber(updatedClient.getGstVatNumber());
+        }
+        if (updatedClient.getOfficeNumber() != null) {
+            existingClient.setOfficeNumber(updatedClient.getOfficeNumber());
+        }
+        if (updatedClient.getCity() != null) {
+            existingClient.setCity(updatedClient.getCity());
+        }
+        if (updatedClient.getState() != null) {
+            existingClient.setState(updatedClient.getState());
+        }
+        if (updatedClient.getPostalCode() != null) {
+            existingClient.setPostalCode(updatedClient.getPostalCode());
+        }
+        if (updatedClient.getAddedBy() != null) {
+            existingClient.setAddedBy(updatedClient.getAddedBy());
+        }
+        if (updatedClient.getCompanyAddress() != null) {
+            existingClient.setCompanyAddress(updatedClient.getCompanyAddress());
+        }
+        if (updatedClient.getShoppingAddress() != null) {
+            existingClient.setShoppingAddress(updatedClient.getShoppingAddress());
+        }
+        if (updatedClient.getNote() != null) {
+            existingClient.setNote(updatedClient.getNote());
+        }
+        if (updatedClient.getCompanyLogo() != null) {
+            existingClient.setCompanyLogo(updatedClient.getCompanyLogo());
+        }
+        if (updatedClient.getRole() != null) {
+            existingClient.setRole(updatedClient.getRole());
+        }
+        if (updatedClient.getImageProfile() != null) {
+            existingClient.setImageProfile(updatedClient.getImageProfile());
+        }
+        if (updatedClient.getImageProfileData() != null) {
+            existingClient.setImageProfileData(updatedClient.getImageProfileData());
+        }
+        if (updatedClient.getImageLogo() != null) {
+            existingClient.setImageLogo(updatedClient.getImageLogo());
+        }
+        if (updatedClient.getImageLogoData() != null) {
+            existingClient.setImageLogoData(updatedClient.getImageLogoData());
+        }
+
+        return clientDao.save(existingClient);
+    }
+
+    @Transactional
+    public void deleteClient(Long clientId) {
+        Client client = clientDao.findById(clientId)
+                .orElseThrow(() -> new RuntimeException("Client not found"));
+        clientDao.delete(client);
     }
 }

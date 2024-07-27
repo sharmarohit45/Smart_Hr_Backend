@@ -48,7 +48,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 						"/contract", "/notice", "/product", "/product/{productId}", "/proposals","/proposals/{proposalId}",
 						"/clockAttendance/clock-in","saveEvent","/events","/createTask","/task","/leaves","/leaves/{id}","/interview","/interview/{id}",
 						"/clockAttendance/clock-out/{id}","/account","/account-data","/assets","/company","/award/{id}","/award","/appericiation","/appericiation/{id}",
-						"/holiday","/holiday/{id}","/employee/{employeeId}","/clockAttendance/clock-out/{employeeId}/{attendanceDate}","/admin/{id}","/template")
+						"/holiday","/holiday/{id}","/employee/{employeeId}","/clockAttendance/clock-out/{employeeId}/{attendanceDate}","/admin/{id}","/template","/proposals/{proposalId}")
 				.permitAll().antMatchers(HttpHeaders.ALLOW).permitAll().anyRequest().authenticated().and()
 				.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);

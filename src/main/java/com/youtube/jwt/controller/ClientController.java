@@ -5,10 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -64,5 +66,17 @@ public class ClientController {
 		Optional<Client> client = clientService.getClientById(clientId);
 		return client.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
 	}
+	
+	 @PutMapping("/client/{clientId}")
+	    public ResponseEntity<Client> updateClient(@PathVariable Long clientId, @RequestBody Client updatedClient) {
+	        Client savedClient = clientService.updateClient(clientId, updatedClient);
+	        return ResponseEntity.ok(savedClient);
+	    }
+
+	    @DeleteMapping("/client/{clientId}")
+	    public ResponseEntity<String> deleteClient(@PathVariable Long clientId) {
+	        clientService.deleteClient(clientId);
+	        return ResponseEntity.ok("Client deleted successfully");
+	    }
 
 }
