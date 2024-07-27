@@ -89,6 +89,9 @@ import com.youtube.jwt.exception.EntityNotFoundException;
 	            if (updatedAdmin.getAbout() != null) {
 	            	existingAdmin.setAbout(updatedAdmin.getAbout());;
 	            }
+	            if (updatedAdmin.getAnniversaryDate() != null) {
+	            	existingAdmin.setAnniversaryDate(updatedAdmin.getAnniversaryDate());;
+	            }
 	            return adminDao.save(existingAdmin);
 	        } else {
 	            throw new EntityNotFoundException("Employee not found with id: " + adminId);

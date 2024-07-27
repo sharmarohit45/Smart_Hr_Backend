@@ -38,8 +38,11 @@ public class Employee {
 	 private String provision_End_Date;
 	 private String notice_Period_Date;
 	 private String notice_Period_Enddate;
+	 private String internship_end_date;
+	 private String contract_end_date;
 	 private String employement_Type;
 	 private String maritial_State;
+	 private String anniversary_date;
 	 private String role;
 	 private String exit_date;
 	 public String getExit_date() {
@@ -310,6 +313,30 @@ public class Employee {
 
 	public void setImageData(byte[] imageData) {
 		this.imageData = imageData;
+	}
+
+	public String getInternship_end_date() {
+		return internship_end_date;
+	}
+
+	public void setInternship_end_date(String internship_end_date) {
+		this.internship_end_date = internship_end_date;
+	}
+
+	public String getContract_end_date() {
+		return contract_end_date;
+	}
+
+	public void setContract_end_date(String contract_end_date) {
+		this.contract_end_date = contract_end_date;
+	}
+
+	public String getAnniversary_date() {
+		return anniversary_date;
+	}
+
+	public void setAnniversary_date(String anniversary_date) {
+		this.anniversary_date = anniversary_date;
 	}
 	  
 	

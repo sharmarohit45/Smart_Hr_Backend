@@ -190,6 +190,15 @@ public class EmployeeService {
             if (updatedEmployee.getImageData() != null) {
                 existingEmployee.setImageData(updatedEmployee.getImageData());
             }
+            if (updatedEmployee.getInternship_end_date() != null) {
+                existingEmployee.setInternship_end_date(updatedEmployee.getInternship_end_date());
+            }
+            if (updatedEmployee.getContract_end_date() != null) {
+                existingEmployee.setContract_end_date(updatedEmployee.getContract_end_date());
+            }
+            if (updatedEmployee.getAnniversary_date() != null) {
+                existingEmployee.setAnniversary_date(updatedEmployee.getAnniversary_date());
+            }
 
             return employeeDao.save(existingEmployee);
         } else {
