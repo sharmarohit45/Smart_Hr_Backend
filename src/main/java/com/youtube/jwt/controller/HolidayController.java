@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.youtube.jwt.entity.HoliDayDateOcassion;
 import com.youtube.jwt.entity.Holiday;
+import com.youtube.jwt.entity.InterviewSchedule;
 import com.youtube.jwt.entity.ProposalProduct;
 import com.youtube.jwt.service.HolidayService;
 
@@ -40,6 +41,11 @@ public class HolidayController {
 		List<Holiday> Holiday = holidayService.getAllHoliday();
 		return new ResponseEntity<>(Holiday, HttpStatus.OK);
 	}
+	@GetMapping("/holiday/{id}")
+    public ResponseEntity<Holiday> getHolidayById(@PathVariable Long id) {
+        Optional<Holiday> holiday = holidayService.getHolidayById(id);
+        return holiday.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 
 	@PutMapping("/holiday/{id}")
 	public ResponseEntity<Holiday> updateHoliday(@PathVariable Long id, @RequestBody Holiday holiday) {
