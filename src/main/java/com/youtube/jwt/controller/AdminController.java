@@ -1,6 +1,7 @@
 package com.youtube.jwt.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.youtube.jwt.entity.Admin;
 import com.youtube.jwt.entity.Client;
+import com.youtube.jwt.entity.Employee;
 import com.youtube.jwt.service.AdminService;
 import com.youtube.jwt.service.ClientService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +40,13 @@ public class AdminController {
 	public List<Admin> getAdminData() {
         return adminService.getAdminData();
     }
-	 @PutMapping("/admin/{id}")
+	@GetMapping("/admin/{id}")
+    public ResponseEntity<Admin> getEmployeeById(@PathVariable Long id) {
+        Optional<Admin> admin = adminService.getAdminId(id);
+        return admin.map(ResponseEntity::ok)
+                       .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+	@PutMapping("/admin/{id}")
 	    public ResponseEntity<Admin> updateAdmin(@PathVariable Long id, @RequestBody Admin updatedAdmin) {
 	        Admin admin = adminService.updateEmployee(id, updatedAdmin);
 	        return ResponseEntity.ok(admin);

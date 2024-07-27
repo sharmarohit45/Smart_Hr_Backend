@@ -29,15 +29,13 @@ import com.youtube.jwt.exception.EntityNotFoundException;
 	    	admin.setPassword(encodedPassword);
 	        return adminDao.save(admin);
 	    }
-
-
-	    
+	    public Optional<Admin> getAdminId(Long adminId) {
+	        Optional<Admin> admin = adminDao.findById(adminId);
+	        return admin;
+	    }  
 	    public String getEncodedPassword(String password) {
 	        return passwordEncoder.encode(password);
 	    }
-
-
-
 		public List<Admin> getAdminData() {
 			List<Admin> admin = new ArrayList<>();
 			adminDao.findAll().forEach(admin::add);
