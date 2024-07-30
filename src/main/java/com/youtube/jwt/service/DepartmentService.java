@@ -23,6 +23,11 @@ public class DepartmentService {
 	public List<Department> getAllDepartment() {
 		return departmentDao.findAll(); // Or whatever method is used in your DAO
 	}
+	public Department getDepartmentById(Long departmentId) {
+        return departmentDao.findById(departmentId)
+                .orElseThrow(() -> new RuntimeException("Proposal not found"));
+    }
+
 
 	public Department updateDepartment(Long departmentId, Department updatedDepartment) {
 		Department existingDepartment = departmentDao.findById(departmentId)

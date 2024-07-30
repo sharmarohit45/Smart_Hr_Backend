@@ -32,6 +32,11 @@ public ResponseEntity<Department> saveDepartment(@RequestBody Department departm
 public List<Department> getAllDesignations() {
     return departmentService.getAllDepartment();
 }
+@GetMapping("/departments/{departmentId}")
+public ResponseEntity<Department> getDepartmentById(@PathVariable Long departmentId) {
+	Department department = departmentService.getDepartmentById(departmentId);
+	return ResponseEntity.ok(department);
+}
 @PutMapping("/departments/{departmentId}")
 public ResponseEntity<Department> updateDepartment(@PathVariable Long departmentId, @RequestBody Department updatedDepartment) {
     Department department = departmentService.updateDepartment(departmentId, updatedDepartment);

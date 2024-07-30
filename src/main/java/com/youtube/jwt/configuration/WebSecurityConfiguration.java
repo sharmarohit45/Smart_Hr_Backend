@@ -43,7 +43,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/authenticate", "/registerNewUser", "/task/{id}","/client", "/client-count", "/employee", "/admin",
 						"/allEmployee", "/employee-count", "/employee/{emp_id}", "/lead", "/lead/{id}","/lead-count", "/deals",
 						"/deals/{id}","/deal-count", "/employee/{emp_id}", "/createNewProject", "/shift", "/allclient", "/admin/data",
-						"/getallProject","/project-count", "/shift/data", "/designations", "/departments", "/attendence",
+						"/getallProject","/project-count", "/shift/data", "/designations", "/departments","/designations/{id}", "/attendence",
 						"/client/{clientId}", "/stickynote", "/stickynote/{stickyNoteId}", "{/loginDetails}","/designations/{id}","/accounts/{accountID}",
 						"/contract", "/notice", "/product", "/product/{productId}", "/proposals","/proposals/{proposalId}",
 						"/clockAttendance/clock-in","saveEvent","/events","/createTask","/task","/leaves","/leaves/{id}","/interview","/interview/{id}",
