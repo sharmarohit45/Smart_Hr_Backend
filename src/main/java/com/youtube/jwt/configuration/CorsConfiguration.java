@@ -17,7 +17,7 @@ public class CorsConfiguration {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
+                 registry.addMapping("/**")
                 .allowedOrigins("http://localhost:3000","https://psspl.netlify.app/")
                 .allowedMethods("GET", "POST", "PUT", "DELETE")  
                 .allowedHeaders("*");
