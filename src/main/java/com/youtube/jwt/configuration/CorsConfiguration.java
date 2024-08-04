@@ -20,7 +20,8 @@ public class CorsConfiguration {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedMethods(GET, POST, PUT, DELETE)
-                        .allowedHeaders("*").allowedOrigins("https://psspl.netlify.app")
+                        .allowedHeaders("*")
+                        .allowedOrigins("https://psspl.netlify.app")
                         .allowedOriginPatterns("*")
                         .allowCredentials(true);
             }
