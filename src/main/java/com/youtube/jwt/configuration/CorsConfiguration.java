@@ -12,15 +12,18 @@ public class CorsConfiguration {
     private static final String POST = "POST";
     private static final String PUT = "PUT";
     private static final String DELETE = "DELETE";
+
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                 registry.addMapping("/**")
-                .allowedOrigins("https://psspl.netlify.app/")
-                .allowedMethods("GET", "POST", "PUT", "DELETE")  
-                .allowedHeaders("*");
+                registry.addMapping("/**")
+                        .allowedMethods(GET, POST, PUT, DELETE)
+                        .allowedHeaders("*")
+                        .allowedOriginPatterns("*")
+                        .allowCredentials(true);
+            }
         };
     }
 }
