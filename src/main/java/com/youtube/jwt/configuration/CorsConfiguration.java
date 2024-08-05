@@ -22,7 +22,6 @@ public class CorsConfiguration {
                 registry.addMapping("/**").allowedOrigins("http://localhost:3000", "https://psspl.netlify.app")
                         .allowedMethods(GET, POST, PUT, DELETE)
                         .allowedHeaders("*")
-                        .allowedOriginPatterns("*")
                         .allowCredentials(true);
             }
         };
