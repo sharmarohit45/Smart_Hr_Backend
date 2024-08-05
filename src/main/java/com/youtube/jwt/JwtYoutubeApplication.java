@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "com.youtube.jwt.dao")
-@CrossOrigin(origins = "http://localhost:3000","https://psspl.netlify.app/")
+@CrossOrigin(origins = "http://localhost:3000","https://psspl.netlify.app")
 public class JwtYoutubeApplication {
 
     public static void main(String[] args) {
