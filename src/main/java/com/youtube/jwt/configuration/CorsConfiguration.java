@@ -14,7 +14,10 @@ public class CorsConfiguration {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") 
-                    .allowedOrigins("https://psspl.netlify.app", "http://localhost:3000") 
+                    .allowedOrigins(
+                        "https://psspl.netlify.app",
+                        "http://localhost:3000"
+                    ) 
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                      .allowedHeaders("Content-Type", "Authorization", "Accept", "X-Requested-With")
                     .allowedHeaders("*") 
