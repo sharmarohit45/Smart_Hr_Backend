@@ -1,4 +1,3 @@
-
 package com.youtube.jwt.configuration;
 
 import org.springframework.context.annotation.Bean;
@@ -19,10 +18,11 @@ public class CorsConfiguration {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://localhost:3000", "https://psspl.netlify.app")
-                        .allowedMethods(GET, POST, PUT, DELETE)
-                        .allowedHeaders("*")
-                        .allowCredentials(true);
+                registry.addMapping("/**")
+                    .allowedOrigins("http://localhost:3000", "https://psspl.netlify.app") // Exact origin URLs
+                    .allowedMethods(GET, POST, PUT, DELETE)
+                    .allowedHeaders("*") // Allows all headers; consider specifying if you need stricter control
+                    .allowCredentials(true); // Allow credentials to be sent with requests
             }
         };
     }
