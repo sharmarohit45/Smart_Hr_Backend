@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "com.youtube.jwt.dao")
+@CrossOrigin
 public class JwtYoutubeApplication {
 
     public static void main(String[] args) {
