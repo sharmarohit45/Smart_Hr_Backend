@@ -16,7 +16,7 @@ public class CorsConfiguration {
                 registry.addMapping("/**") 
                     .allowedOrigins(
                         "https://psspl.netlify.app",
-                        "http://localhost:3000"
+                        "http://localhost:3000","https://psspl-rohit-sharmas-projects-fc9e49f6.vercel.app"
                     ) 
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                      .allowedHeaders("Content-Type", "Authorization", "Accept", "X-Requested-With")
