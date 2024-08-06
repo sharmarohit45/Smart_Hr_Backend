@@ -17,7 +17,7 @@ public class CorsConfiguration {
                     .allowedOrigins(
                         "https://psspl.netlify.app",
                         "http://localhost:3000","https://psspl-rohit-sharmas-projects-fc9e49f6.vercel.app",
-                        "https://psspl.vercel.app/"
+                        "https://psspl.vercel.app"
                     ) 
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                      .allowedHeaders("Content-Type", "Authorization", "Accept", "X-Requested-With")
