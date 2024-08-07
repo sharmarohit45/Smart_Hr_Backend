@@ -30,12 +30,12 @@ public ResponseEntity<Skills> createTask(@RequestBody Skills skills) {
 public List<Skills> getAllSkills() {
 	return skillsService.getAllSkills();
 }
-@PutMapping("/skills/{id}")
+@PutMapping("/skills/{skillId}")
 public ResponseEntity<Skills> updateSkills(@PathVariable Long skillId, @RequestBody Skills skills) {
 	Skills skillsData = skillsService.updateSkills(skillId, skills);
     return ResponseEntity.ok(skillsData);
 }
-@DeleteMapping("/skills/{id}")
+@DeleteMapping("/skills/{skillId}")
 public ResponseEntity<Void> deleteSkills(@PathVariable Long skillId) {
 	skillsService.deleteSkills(skillId);
     return ResponseEntity.noContent().build();
