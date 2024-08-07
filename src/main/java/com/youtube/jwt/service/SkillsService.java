@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
 import com.youtube.jwt.dao.SkillsDao;
 import com.youtube.jwt.entity.Skills;
-
+@Service
 public class SkillsService {
 @Autowired
 private SkillsDao skillsDao;
