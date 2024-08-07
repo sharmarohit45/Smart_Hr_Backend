@@ -19,11 +19,11 @@ private SkillsDao skillsDao;
 	public List<Skills> getAllSkills() {
 	    return skillsDao.findAll(); 
 	}
-	public Optional<Skills> findSkillsById(Long id) {
-	    return skillsDao.findById(id);
+	public Optional<Skills> findSkillsById(Long skillId) {
+	    return skillsDao.findById(skillId);
 	}
-	public void deleteSkills(Long id) {
-		skillsDao.deleteById(id);
+	public void deleteSkills(Long skillId) {
+		skillsDao.deleteById(skillId);
     }
 	public Skills updateSkills(Long skillId, Skills updatedSkills) {
 		Skills existingSkills = skillsDao.findById(skillId)
