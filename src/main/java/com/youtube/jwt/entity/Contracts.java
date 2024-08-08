@@ -32,8 +32,9 @@ public class Contracts {
 	private Long ClientIId;
     
     @ManyToOne
-    @JoinColumn(name = "client_id", referencedColumnName = "clientId")
+    @JoinColumn(name = "client_iid", referencedColumnName = "clientId")
     private Client client;
+    
 	public Long getClientIId() {
 		return ClientIId;
 	}

@@ -52,9 +52,9 @@ public class AdminBankAccountController {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
-	  @PutMapping("/accounts/{accountID}")
-	    public AdminAccount updateAdminAccount(@PathVariable Long accountID, @RequestBody AdminAccount updatedAccount) {
-	        return adminBankAccountService.updateAdminAccount(accountID, updatedAccount);
-	    }
+
+	@PutMapping("/accounts/{accountID}")
+	public AdminAccount updateAdminAccount(@PathVariable Long accountID, @RequestBody AdminAccount updatedAccount) {
+		return adminBankAccountService.updateAdminAccount(accountID, updatedAccount);
+	}
 }
