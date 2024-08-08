@@ -9,6 +9,7 @@ import com.youtube.jwt.dao.ClientDao;
 import com.youtube.jwt.dao.ContractDao;
 import com.youtube.jwt.entity.Client;
 import com.youtube.jwt.entity.Contracts;
+import com.youtube.jwt.entity.Department;
 
 @Service
 public class ContractService {
@@ -27,6 +28,13 @@ public class ContractService {
                 .orElseThrow(() -> new RuntimeException("Client not found"));
                 contract.setClient(client);
         return contractDao.save(contract);
+    }
+	public Contracts getContractIdById(Long contractId) {
+        return contractDao.findById(contractId)
+                .orElseThrow(() -> new RuntimeException("contract not found"));
+    }
+	public void deleteContract(Long contractId) {
+		contractDao.deleteById(contractId);
     }
 	
 }
