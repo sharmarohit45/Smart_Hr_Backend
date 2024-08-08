@@ -12,7 +12,22 @@ public class Lead {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	private String salutation;
+	private String name;
+	private String email;
+	private String leadSource;
+	private String addedBy;
+	private String companyName;
+	private String website;
+	private String mobile;
+	private String officePhone;
+	private String country;
+	private String state;
+	private String city;
+	private String postalCode;
+	private String address;
+	private String savedAt;
+	
 	public Long getId() {
 		return id;
 	}
@@ -132,23 +147,6 @@ public class Lead {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	private String salutation;
-	private String name;
-	private String email;
-	private String leadSource;
-	private String addedBy;
-	private String companyName;
-	private String website;
-	private String mobile;
-	private String officePhone;
-	private String country;
-	private String state;
-	private String city;
-	private String postalCode;
-	private String address;
-	private String savedAt;
-
 	public String getSavedAt() {
 		return savedAt;
 	}
