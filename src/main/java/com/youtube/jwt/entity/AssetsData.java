@@ -15,8 +15,9 @@ public class AssetsData {
 	private String assetName;
 	private String assetType;
 	@Lob
-	@Column(name = "assetPicture", columnDefinition = "BLOB")
-	private byte[] assetPicture;
+	@Column(name = "asset_data", columnDefinition = "BLOB")
+	private byte[] assetData;
+	
 	private String serialNumber;
 	private String value;
 	private String location;
@@ -41,11 +42,11 @@ public class AssetsData {
 		this.assetType = assetType;
 	}
 	
-	public byte[] getAssetPicture() {
-		return assetPicture;
+	public byte[] getAssetData() {
+		return assetData;
 	}
-	public void setAssetPicture(byte[] assetPicture) {
-		this.assetPicture = assetPicture;
+	public void setAssetData(byte[] assetData) {
+		this.assetData = assetData;
 	}
 	public String getSerialNumber() {
 		return serialNumber;
