@@ -41,17 +41,17 @@ public class LeadController {
         return employee.map(ResponseEntity::ok)
                        .orElseGet(() -> ResponseEntity.notFound().build());
     }
-    @DeleteMapping("/lead/{lead_id}")
-    public ResponseEntity<Void> deleteLead(@PathVariable Long lead_id) {
-        Optional<Lead> leadOptional = leadService.getLeadById(lead_id);
+    @DeleteMapping("/lead/{id}")
+    public ResponseEntity<Void> deleteLead(@PathVariable Long id) {
+        Optional<Lead> leadOptional = leadService.getLeadById(id);
         if (leadOptional.isPresent()) {
-            leadService.deleteLead(lead_id);
+            leadService.deleteLead(id);
             return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.notFound().build();
         }
     }
-    @PutMapping("/lead/{lead_id}")
+    @PutMapping("/lead/{id}")
     public ResponseEntity<Lead> updateLeadContact(
             @PathVariable("id") Long id,
             @RequestBody Lead updatedContact) {
