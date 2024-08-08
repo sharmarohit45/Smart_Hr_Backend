@@ -23,4 +23,7 @@ public class Assets {
 	{
 		return assetsDao.findAll();
 	}
+	public void deleteAssets(Long assetsId) {
+		assetsDao.deleteById(assetsId);
+    }
 }
